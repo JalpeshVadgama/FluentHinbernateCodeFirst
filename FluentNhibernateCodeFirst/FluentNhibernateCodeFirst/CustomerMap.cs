@@ -11,4 +11,6 @@ namespace FluentNhibernateCodeFirst
             Map(c => c.LastName);
         }
     }
+
+    
 }
