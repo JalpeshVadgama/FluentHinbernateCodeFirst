@@ -1,14 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Configuration;
 using FluentNHibernate.Cfg;
 using FluentNHibernate.Cfg.Db;
 using NHibernate;
 using NHibernate.Tool.hbm2ddl;
-
-
 
 namespace FluentNhibernateCodeFirst
 {
@@ -18,7 +13,9 @@ namespace FluentNhibernateCodeFirst
 
         static void Main(string[] args)
         {
-
+            string connectionString = ConfigurationManager.ConnectionStrings["DefaultConnectionString"].ConnectionString;
+            CreateDatabase(connectionString);
+            Console.Write("Database Created sucessfully");
         }
 
         static void CreateDatabase(string connectionString)
